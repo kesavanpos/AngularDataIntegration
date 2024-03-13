@@ -10,9 +10,10 @@ import { HttpInterceptorService } from '../app/services/http-interceptor.service
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { FormbuilderComponent } from './components/formbuilder/formbuilder.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FormbuilderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
