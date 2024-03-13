@@ -12,6 +12,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormbuilderComponent } from './components/formbuilder/formbuilder.component';
 
+import { FormsModule } from '@angular/forms';
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 @NgModule({
   declarations: [AppComponent, FormbuilderComponent],
   imports: [
@@ -21,6 +26,15 @@ import { FormbuilderComponent } from './components/formbuilder/formbuilder.compo
     HttpClientModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) =>
+          new TranslateHttpLoader(http, './assets/i18n/', '.json'),
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [
     {
